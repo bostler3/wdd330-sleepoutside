@@ -5,7 +5,7 @@ function productCardTemplate(product) {
     if (product.FinalPrice < product.SuggestedRetailPrice) {
         discount = Math.round((product.FinalPrice / product.SuggestedRetailPrice - 1) * -100);
     }
-    // Got some help from a Bing search for how to do an if statement in a string literal; a ternary operator come up as an option
+    // Got some help from a Bing search for how to do an if statement in a string literal; a ternary operator came up as an option
     return `<li class="product-card">
         <a href="product_pages/?product=${product.Id}">
             <img src="${product.Image}" alt="Image of ${product.Name}">
