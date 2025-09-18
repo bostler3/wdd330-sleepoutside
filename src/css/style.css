@@ -263,7 +263,7 @@ footer {
 }
 
 /* Alert styles for alerts loaded dynamically */
-#alertsContainer > div {
+#alert-container > div {
   color: #fff;
   padding: 10px 15px;
   margin: 10px 0;
@@ -271,4 +271,7 @@ footer {
   font-weight: bold;
   font-size: 1rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+#alert-container > div + div {
+  margin-top: 5px;
 }
