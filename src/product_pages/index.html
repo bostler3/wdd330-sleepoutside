@@ -16,6 +16,9 @@
   <body>
     <header class="divider" id="main-header"></header>
 
+    <!-- ALERTS CONTAINER ADDED -->
+    <div id="alertsContainer"></div>
+
     <main class="divider">
       <section class="product-detail">
         <h2>Brand Name</h2>
@@ -36,5 +39,34 @@
     </main>
 
     <footer id="main-footer"></footer>
+
+    <!-- ALERTS LOADING SCRIPT ADDED -->
+    <script>
+      async function loadAlerts() {
+        try {
+          const response = await fetch('alerts.json');
+          if (!response.ok) throw new Error('Could not load alerts.json');
+
+          const alerts = await response.json();
+          const container = document.getElementById('alertsContainer');
+
+          alerts.forEach(alert => {
+            const alertDiv = document.createElement('div');
+            alertDiv.textContent = alert.message;
+            alertDiv.style.backgroundColor = alert.backgroundColor;
+            alertDiv.style.color = '#fff';
+            alertDiv.style.padding = '10px 15px';
+            alertDiv.style.margin = '10px 0';
+            alertDiv.style.borderRadius = '4px';
+            alertDiv.style.fontWeight = 'bold';
+            container.appendChild(alertDiv);
+          });
+        } catch (error) {
+          console.error('Error loading alerts:', error);
+        }
+      }
+
+      loadAlerts();
+    </script>
   </body>
 </html>
