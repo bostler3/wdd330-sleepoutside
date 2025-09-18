@@ -1,3 +1,4 @@
+// Cynthia's W02 Individual Submission
 import { renderListWithTemplate } from "./utils.mjs";
 
 function productCardTemplate(product) {
