@@ -7,10 +7,10 @@ function productCardTemplate(product) {
     }
     // Got some help from a Bing search for how to do an if statement in a string literal; a ternary operator came up as an option
     return `<li class="product-card">
-        <a href="product_pages/?product=${product.Id}">
-            <img src="${product.Image}" alt="Image of ${product.Name}">
+        <a href="/product_pages/?product=${product.Id}">
+            <img src="${product.Images.PrimaryMedium}" alt="Image of ${product.Name}">
             <h2 class="card_brand">${product.Brand.Name}</h2>
-            <h3 class="card_name">${product.Name}</h3>
+            <h3 class="card_name">${product.NameWithoutBrand}</h3>
             <p class="product-card_price">$${product.FinalPrice}<br>
             ${discount != 0 ? `Discounted ${discount}%!` : ""}</p>
         </a>
@@ -24,7 +24,7 @@ export default class ProductList {
         this.listElement = listElement;
     }
     async init() {
-        const list = await this.dataSource.getData();
+        const list = await this.dataSource.getData(this.category);
         this.renderList(list);
     }
     renderList(list) {

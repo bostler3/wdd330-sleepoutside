@@ -94,6 +94,29 @@ p {
   margin-top: -1.7em;
 }
 
+.product-category-images {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+}
+
+.product-category-images a {
+  text-decoration: none;
+  color: var(--dark-grey);
+  font-weight: bold;
+  text-align: center;
+  padding: 1rem;
+  font-size: large;
+}
+
+.product-category-images img {
+  padding: 1rem;
+}
+
 /* utility classes */
 .highlight {
   color: var(--tertiary-color);
