@@ -22,14 +22,18 @@ export default class ProductDetails {
 }
     
 function productDetailsTemplate(product) {
+    let discount = 0;
+    if (product.FinalPrice < product.SuggestedRetailPrice) {
+        discount = Math.round((product.FinalPrice / product.SuggestedRetailPrice - 1) * -100);
+    }
     document.querySelector("h2").textContent = product.Brand.Name;
     document.querySelector("h3").textContent = product.NameWithoutBrand;
 
     const img = document.querySelector("#productImage");
-    img.src = product.Image;
+    img.src = product.Images.PrimaryLarge;
     img.alt = product.NameWithoutBrand;
-    document.querySelector("#productPrice").textContent = `$${product.FinalPrice}`;
-    document.querySelector("#productColor").textContent = product.ColorName;
+    document.querySelector("#productPrice").textContent = `$${product.FinalPrice}${discount != 0 ? ` - Discounted ${discount}%!` : ""}`;
+    document.querySelector("#productColor").innerHTML = product.Colors[0].ColorName;
     document.querySelector("#productDesc").innerHTML = product.DescriptionHtmlSimple;
     
     document.querySelector("#addToCart").dataset.id = product.Id;
