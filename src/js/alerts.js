@@ -8,7 +8,7 @@ async function loadAlerts() {
     const alerts = await res.json();
     const container = document.getElementById("alert-container");
 
-    alerts.forEach(alert => {
+    alerts.forEach((alert) => {
       const alertDiv = document.createElement("div");
       alertDiv.className = "custom-alert";
       alertDiv.style.backgroundColor = alert.backgroundColor;

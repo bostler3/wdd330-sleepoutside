@@ -156,6 +156,14 @@ button {
 
 /* End cart icon styles */
 
+.hide {
+  display: none;
+}
+
+.cart-footer {
+  text-align: center;
+}
+
 .mission {
   position: absolute;
   top: 1rem;
