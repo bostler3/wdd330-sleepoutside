@@ -272,6 +272,103 @@ button {
   grid-column: 3;
 }
 
+.form-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.order-summary > h3 {
+  text-align: center;
+  text-decoration: underline;
+}
+
+#order-sum {
+  text-align: left;
+}
+
+.form-header-text,
+.form {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+fieldset {
+  margin: 0.75rem 0;
+}
+
+legend {
+  color: var(--epl-purple);
+  font-weight: bold;
+}
+
+.form-header-text h2 {
+  padding: 1rem 0 0.5rem 0;
+}
+
+.form label {
+  display: block;
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  max-width: 400px;
+}
+
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="tel"],
+.form textarea,
+.form select {
+  display: block;
+  padding: 0.5rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.label-header {
+  font-weight: bold;
+  font-size: 0.9rem;
+  padding-top: 1rem;
+  padding-bottom: 0.25rem;
+}
+
+.level-radio label {
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.radio-label-text {
+  padding-left: 0.5rem;
+}
+
+input[type="radio"] {
+  width: 19px;
+  height: 19px;
+}
+
+.form button {
+  display: inline-block;
+  cursor: pointer;
+  background: linear-gradient(45deg, blue, yellow);
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 25px;
+  transition: 0.3s ease;
+  text-decoration: none;
+  width: 100%;
+  max-width: 400px;
+  height: 45px;
+}
+
+.form button:hover {
+  background: linear-gradient(45deg, yellow, blue);
+  transform: scale(1.05);
+}
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;
@@ -285,6 +382,10 @@ button {
   .cart-card {
     font-size: inherit;
     grid-template-columns: 150px auto 15%;
+  }
+
+  fieldset {
+    max-width: 600px;
   }
 }
 
