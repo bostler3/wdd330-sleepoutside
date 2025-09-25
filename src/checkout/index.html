@@ -21,7 +21,7 @@
         <h2>Review & Place your Order</h2>
       </section>
       <div class="form-container">
-        <form method="get" class="form" action="confirmation.html">
+        <form name="checkout-form" class="form">
           <fieldset id="contact-info">
             <legend>Contact Information</legend>
             <div class="name-field">
@@ -134,10 +134,7 @@
               /></label>
             </div>
           </fieldset>
-          <!-- <div class="timestamp">
-            <input type="hidden" id="timestamp" name="timestamp" title="Hidden timestamp field">
-          </div> -->
-          <button type="submit">Buy Now</button>
+          <button type="submit" id="checkout-submit">Checkout</button>
         </form>
         <div class="order-summary">
           <h3>Order Summary</h3>

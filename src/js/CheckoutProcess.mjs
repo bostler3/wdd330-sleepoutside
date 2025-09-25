@@ -1,4 +1,26 @@
 import { getLocalStorage } from "./utils.mjs";
+import ExternalServices from "./ExternalServices.mjs";
+
+const services = new ExternalServices();
+
+function formDataToJSON(formElement) {
+    const formData = new FormData(formElement);
+    const convertedJSON = {};
+    formData.forEach((value, key) => {
+        convertedJSON[key] = value;
+    });
+    return convertedJSON;
+}
+
+// Takes the items currently stored in the cart (localstorage) and returns them in a simplified form.
+function packageItems(items) {
+    return items.map(item => ({
+        id: item.Id,
+        name: item.Name,
+        price: item.FinalPrice,
+        quantity: 1
+    }));
+}
 
 export default class CheckoutProcess {
     constructor(key, outputSelector) {
@@ -41,5 +63,24 @@ export default class CheckoutProcess {
         orderDetailsElement.innerHTML = `Sales tax: $${this.tax.toFixed(2)}<br>
         Shipping: $${this.shipping.toFixed(2)}<br>
         Total: $${this.orderTotal.toFixed(2) }</p>`
+    }
+
+    async checkout() {
+        const form = document.forms["checkout-form"];
+        const order = formDataToJSON(form);
+
+        order.orderDate = new Date().toISOString();
+        order.orderTotal = this.orderTotal.toFixed(2);
+        order.tax = this.tax.toFixed(2);
+        order.shipping = this.shipping.toFixed(2);
+        order.items = packageItems(this.list);
+        console.log(order);
+
+        try {
+            const response = await services.checkout(order);
+            console.log(response);
+        } catch (err) {
+            console.log(err);
+        }
     }
 }
