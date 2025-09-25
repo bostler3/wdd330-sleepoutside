@@ -20,6 +20,128 @@
       <section class="products">
         <h2>Review & Place your Order</h2>
       </section>
+      <div class="form-container">
+        <form name="checkout-form" class="form">
+          <fieldset id="contact-info">
+            <legend>Contact Information</legend>
+            <div class="name-field">
+              <label
+                >First Name<input
+                  type="text"
+                  name="fname"
+                  id="fname"
+                  autocomplete="given-name"
+                  title="Please enter your first name"
+                  required
+              /></label>
+            </div>
+            <div class="name-field">
+              <label
+                >Last Name<input
+                  type="text"
+                  name="lname"
+                  id="lname"
+                  autocomplete="family-name"
+                  title="Please enter your last name"
+                  required
+              /></label>
+            </div>
+            <div class="street-field">
+              <label
+                >Street Address<input
+                  type="text"
+                  name="street"
+                  id="street"
+                  autocomplete="address-level3"
+                  title="Please enter your street address"
+                  required
+              /></label>
+            </div>
+            <div class="city-field">
+              <label
+                >City<input
+                  type="text"
+                  name="city"
+                  id="city"
+                  autocomplete="address-level2"
+                  title="Please enter your city"
+                  required
+              /></label>
+            </div>
+            <div class="state-field">
+              <label
+                >State<input
+                  type="text"
+                  name="state"
+                  id="state"
+                  autocomplete="address-level1"
+                  title="Please enter your state"
+                  required
+              /></label>
+            </div>
+            <div class="zip-field">
+              <label
+                >Zip Code<input
+                  type="text"
+                  maxlength="5"
+                  pattern="^\d{5}"
+                  name="zip"
+                  id="zip"
+                  autocomplete="postal-code"
+                  title="Please enter your postal code; only five digits long"
+                  required
+              /></label>
+            </div>
+          </fieldset>
+          <fieldset id="billing-and-shipping-info">
+            <legend>Billing Information</legend>
+            <div class="label-header">Credit Card</div>
+            <div class="number-field">
+              <label
+                >Card Number<input
+                  type="text"
+                  maxlength="16"
+                  pattern="^\d{16}"
+                  name="cardNumber"
+                  id="cardNumber"
+                  autocomplete="cc-number"
+                  title="Please enter your credit card number"
+                  placeholder="5555555555555555"
+                  required
+              /></label>
+            </div>
+            <div class="expiration-date">
+              <label
+                >Expiration Date<input
+                  type="text"
+                  name="expiration"
+                  id="expiration"
+                  title="Please enter your credit card expiration date"
+                  placeholder="9/25"
+                  required
+              /></label>
+            </div>
+            <div class="security-code">
+              <label
+                >Security Code<input
+                  type="text"
+                  name="code"
+                  id="code"
+                  autocomplete="cc-csc"
+                  title="Please enter your credit card security code"
+                  placeholder="123"
+                  required
+              /></label>
+            </div>
+          </fieldset>
+          <button type="submit" id="checkout-submit">Checkout</button>
+        </form>
+        <div class="order-summary">
+          <h3>Order Summary</h3>
+          <p id="order-sum"></p>
+          <p id="order-details"></p>
+        </div>
+      </div>
     </main>
 
     <footer id="main-footer"></footer>
