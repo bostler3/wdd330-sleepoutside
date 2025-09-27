@@ -22,5 +22,5 @@ function getTotal() {
   dataSource.forEach((item) => {
     total += item.FinalPrice;
   });
-  return total;
+  return total.toFixed(2);
 }
