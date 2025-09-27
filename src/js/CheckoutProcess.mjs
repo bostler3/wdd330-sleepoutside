@@ -43,7 +43,7 @@ export default class CheckoutProcess {
         this.list.forEach((item) => {
             this.itemTotal += item.FinalPrice;
         });
-        subTotalElement.textContent = `Subtotal (${this.list.length} items): $${this.itemTotal}`;
+        subTotalElement.textContent = `Subtotal (${this.list.length} items): $${this.itemTotal.toFixed(2)}`;
     }
     
     calculateOrderTotal() {

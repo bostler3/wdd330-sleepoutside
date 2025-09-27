@@ -23,7 +23,7 @@
       <div class="form-container">
         <form name="checkout-form" class="form">
           <fieldset id="contact-info">
-            <legend>Contact Information</legend>
+            <legend>Shipping Information</legend>
             <div class="name-field">
               <label
                 >First Name<input
@@ -114,10 +114,11 @@
               <label
                 >Expiration Date<input
                   type="text"
+                  pattern="^(0[1-9]|1[0-2])\/\d{2}$"
                   name="expiration"
                   id="expiration"
-                  title="Please enter your credit card expiration date"
-                  placeholder="9/25"
+                  title="Please enter your credit card expiration date in MM/YY format"
+                  placeholder="MM/YY"
                   required
               /></label>
             </div>

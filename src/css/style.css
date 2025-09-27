@@ -26,6 +26,10 @@ body {
   color: var(--dark-grey);
 }
 
+main {
+  margin-top: 0.5rem;
+}
+
 img {
   max-width: 100%;
 }
@@ -272,11 +276,6 @@ button {
   grid-column: 3;
 }
 
-.form-container {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-}
-
 .order-summary > h3 {
   text-align: center;
   text-decoration: underline;
@@ -369,6 +368,21 @@ input[type="radio"] {
   transform: scale(1.05);
 }
 
+.error-alert {
+  padding: 0.5rem;
+  width: 100%;
+  background-color: rgba(255, 165, 0, 0.75);
+  border: 1px solid darkorange;
+}
+
+.closeSymbol {
+  float: right; /* Got help with this formatting from a Bing search for right aligning a span element */
+}
+
+.closeSymbol:hover {
+  cursor: pointer; /* Got help with this formatting from a Bing search for change the mouse to an arrow on hover css*/
+}
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;
@@ -384,8 +398,17 @@ input[type="radio"] {
     grid-template-columns: 150px auto 15%;
   }
 
+  .form-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+
   fieldset {
     max-width: 600px;
+  }
+
+  .error-alert {
+    width: 400px;
   }
 }
 
