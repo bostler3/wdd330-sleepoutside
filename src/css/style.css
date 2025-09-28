@@ -417,7 +417,7 @@ footer {
   padding: 1em;
 }
 
-/* Alert styles for alerts loaded dynamically */
+/* Alert styles */
 #alert-container > div {
   color: #fff;
   padding: 10px 15px;
